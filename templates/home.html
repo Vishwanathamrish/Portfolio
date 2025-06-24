@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth transition-colors duration-300">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vishwanath Rajendran</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    };
+  </script>
+
+  <!-- Dark mode preference -->
+  <script>
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+
+  <!-- Wavy note styles -->
+  <style>
+    .note {
+      display: inline-block;
+      padding: 0.3rem 0.6rem;
+      font-weight: 600;
+      transform: rotate(-1.5deg);
+      transition: transform 0.3s ease;
+      clip-path: polygon(5% 0%, 95% 3%, 98% 100%, 0% 97%);
+    }
+    .note:hover {
+      transform: rotate(1.5deg) scale(1.05);
+    }
+    .note-purple {
+      background-color: #ede9fe;
+      color: #111;
+    }
+    .note-pink {
+      background-color: #fee2e2;
+      color: #111;
+    }
+  </style>
+
+  <!-- Lucide Icons -->
+  <script type="module">
+    import { createIcons, icons } from 'https://cdn.jsdelivr.net/npm/lucide@latest/+esm';
+    createIcons({ icons });
+  </script>
+</head>
+
+<body class="bg-white text-black dark:bg-gray-900 dark:text-white transition-colors duration-300">
+
+  <!-- Navbar -->
+  <nav class="bg-white dark:bg-gray-900 fixed w-full z-50 top-0">
+    <div class="max-w-7xl mx-auto px-16 py-8 flex justify-between items-center">
+      <div></div>
+      <div class="flex gap-6 items-center text-sm sm:text-base font-semibold">
+        <a href="{{ url_for('portfolio') }}" class="hover:text-yellow-500 dark:hover:text-blue-400">Home</a>
+        <a href="{{ url_for('projects') }}" class="hover:text-yellow-500 dark:hover:text-blue-400">Projects</a>
+        <a href="{{ url_for('education') }}" class="hover:text-yellow-500 dark:hover:text-blue-400">Education</a>
+        <a href="{{ url_for('about') }}" class="hover:text-yellow-500 dark:hover:text-blue-400">About</a>
+        <a href="{{ url_for('contact') }}" class="hover:text-yellow-500 dark:hover:text-blue-400">Contact</a>
+        <button id="theme-toggle" class="text-xl">🌙</button>
+      </div>
+    </div>
+  </nav>
+
+ <!-- Hero Section -->
+<section id="hero" class="min-h-screen flex items-center pt-40 px-6 sm:px-60">
+  <div class="max-w-3xl">
+    <h1 class="text-4xl sm:text-6xl font-bold mb-4">Hi, I'm Vishwanath R</h1>
+    <p class="text-xl sm:text-2xl mb-6">AI Engineer</p>
+    <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+      Read more
+      <a href="{{ url_for('about') }}" class="note note-pink">about me</a>
+      or
+      <a href="{{ url_for('contact') }}" class="note note-purple">contact me</a>
+    </p>
+  </div>
+</section>
+
+
+  <!-- Social Icons (Centered) -->
+  <div class="mt-12 flex justify-center space-x-6 text-2xl">
+    <a href="https://github.com/Vishwanathamrish" target="_blank" class="text-gray-800 hover:text-black dark:text-white">
+      <i data-lucide="github" class="w-6 h-6"></i>
+    </a>
+    <a href="https://linkedin.com/in/vishwanath-r-4a940721b" target="_blank" class="text-blue-600 hover:text-blue-800">
+      <i data-lucide="linkedin" class="w-6 h-6"></i>
+    </a>
+    <a href="mailto:vishwanathamrish@gmail.com" class="text-red-500 hover:text-red-700">
+      <i data-lucide="mail" class="w-6 h-6"></i>
+    </a>
+    <a href="https://x.com/Vishwa84829045" target="_blank" class="text-black hover:text-gray-800 dark:text-white">
+      <i data-lucide="twitter" class="w-6 h-6"></i>
+    </a>
+  </div>
+
+  <!-- Footer (Centered) -->
+  <footer class="mt-16 text-center text-gray-400 text-sm">
+    <p>© 2025 Vishwanath Rajendran</p>
+  </footer>
+  <!-- Spacer after footer -->
+<div class="h-16"></div>
+
+  <!-- Theme Toggle Script -->
+  <script>
+    const toggle = document.getElementById('theme-toggle');
+    toggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      const isDark = document.documentElement.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      toggle.textContent = isDark ? '☀️' : '🌙';
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+      toggle.textContent = document.documentElement.classList.contains('dark') ? '☀️' : '🌙';
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>

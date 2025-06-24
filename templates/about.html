@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth transition-colors duration-300">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vishwanath Rajendran</title>
+
+  <!-- Theme preference -->
+  <script>
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+    };
+  </script>
+
+  <!-- Lucide Icons -->
+  <script type="module">
+    import { createIcons, icons } from 'https://cdn.jsdelivr.net/npm/lucide@latest/+esm';
+    createIcons({ icons });
+  </script>
+
+  <!-- Note Styles -->
+  <style>
+    .note {
+      display: inline-block;
+      padding: 0.4rem 0.8rem;
+      font-weight: 600;
+      transform: rotate(-1.5deg);
+      transition: transform 0.3s ease;
+      clip-path: polygon(4% 0%, 98% 4%, 96% 98%, 6% 100%);
+    }
+
+    .note:hover {
+      transform: rotate(1.5deg) scale(1.05);
+    }
+
+    .note-blue {
+      background-color: #d4f1f9;
+      color: #111;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-black dark:bg-gray-900 dark:text-white transition-colors duration-300">
+
+  <!-- Navbar -->
+  <nav class="bg-white dark:bg-gray-900 fixed w-full z-50 top-0">
+    <div class="max-w-7xl mx-auto px-16 py-8 flex justify-between items-center">
+      <div></div>
+      <div class="flex gap-6 items-center text-sm sm:text-base font-semibold">
+        <a href="{{ url_for('portfolio') }}" class="hover:text-yellow-500 dark:hover:text-blue-400">Home</a>
+        <a href="{{ url_for('projects') }}" class="hover:text-yellow-500 dark:hover:text-blue-400">Projects</a>
+        <a href="{{ url_for('education') }}" class="hover:text-yellow-500 dark:hover:text-blue-400">Education</a>
+        <a href="{{ url_for('about') }}" class="hover:text-yellow-500 dark:hover:text-blue-400">About</a>
+        <a href="{{ url_for('contact') }}" class="hover:text-yellow-500 dark:hover:text-blue-400">Contact</a>
+        <button id="theme-toggle" class="text-xl">🌙</button>
+      </div>
+    </div>
+  </nav>
+
+<!-- About Section -->
+<section id="about" class="pt-24 pb-16 px- bg-white dark:bg-gray-900 dark:text-white transition-colors duration-300">
+  <div class="max-w-6xl mx-auto">
+    <!-- Heading, Full-Width Solid Line, and Tagline Centered -->
+    <div class="text-left mb-10">
+      <h1 class="text-7xl font-extrabold text-black dark:text-white mb-8">About</h1>
+      <hr class="border-t border-gray-300 dark:border-gray-600 mb-4" />
+      
+    </div>
+
+    <!-- Profile and Content Row -->
+    <div class="flex flex-col md:flex-row items-center md:items-start space-y-10 md:space-y-0 md:space-x-12">
+      <!-- Profile Image -->
+      <div class="flex-shrink-0 text-center md:text-left">
+        <img src="../static/img.jpg" alt="Vishwanath R"
+          class="rounded-full w-48 h-48 object-cover mx-auto md:mx-0" />
+        <h2 class="text-2xl font-bold mt-4">VISHWANATH R</h2>
+        <p class="text-gray-600 dark:text-gray-400 text-lg">AI Engineer</p>
+        <p class="text-gray-600 dark:text-gray-400">DigiDara Technologies Pvt Ltd</p>
+      </div>
+
+      <!-- About Content -->
+      <div class="flex-1">
+        <h1 class="text-4xl font-extrabold mb-6 text-center md:hidden">About Me</h1>
+        <p class="text-lg mb-4">
+          Hello, I'm <strong>Vishwanath R</strong>, an AI Engineer at <strong>DigiDara Technologies</strong>, with a Master's degree in <strong>Data Science & Business Analytics</strong>. I specialize in developing practical AI, Machine Learning, and Natural Language Processing (NLP) solutions tailored to real-world challenges.
+        </p>
+        <p class="text-lg mb-4">
+          At DigiDara, I focus on building intelligent systems including <strong>Agentic AI frameworks</strong>, <strong>chatbots</strong>, <strong>question-answering systems</strong>, and <strong>semantic search tools</strong>.
+        </p>
+        <p class="text-lg mb-4">
+          My mission is to leverage AI to solve complex problems, enhance human potential, and create meaningful impact across industries.
+        </p>
+        <p class="text-lg mb-4">Key projects I've worked on include:</p>
+        <ul class="list-disc pl-6 mb-4 text-lg">
+          <li>🧠 <strong>Autism Detection</strong> using Machine Learning</li>
+          <li>🏡 <strong>House Price Prediction</strong> in Bengaluru</li>
+          <li>🧬 <strong>Kidney Stone Removal Prediction</strong> using ML</li>
+          <li>🗞 <strong>News Summarization & Text-to-Speech Application</strong></li>
+          <li>🤖 <strong>TeachMate AI Agent</strong> – an advanced AI-powered teaching assistant</li>
+        </ul>
+        
+        <p class="text-lg mb-4">
+          I have also gained hands-on experience through internships and virtual job simulations at organizations like <strong>CodSoft</strong>, <strong>Accenture</strong>, and <strong>PwC</strong>, where I worked on data analytics, visualization, and business intelligence use cases.
+        </p>
+        <p class="text-lg mb-4">
+          I’m deeply passionate about applying AI for social good — particularly in the domains of <strong>education</strong>, <strong>healthcare</strong>, and <strong>business transformation</strong>.
+        </p>
+        <p class="text-lg mb-4">
+          I’m always open to new opportunities and collaborations. Let’s build a smarter, more inclusive future powered by AI
+        </p>
+
+        <!-- Resume Button -->
+        <div class="mt-6">
+          <a href="../static/VISHWANATH.pdf" target="_blank" rel="noopener noreferrer" class="note note-blue">
+            📄 View Resume
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Experience Section -->
+  <section id="experience" class="bg-white dark:bg-[#0f172a] py-20 px-6 transition-colors duration-300">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold mb-10 text-center text-black dark:text-white flex items-center justify-center gap-2">
+        <i data-lucide="briefcase" class="text-pink-600 dark:text-pink-400 w-6 h-6"></i> Experience
+      </h2>
+      <div class="bg-gray-100 dark:bg-[#0f172a] border border-gray-300 dark:border-gray-700 rounded-xl p-8 space-y-4 shadow-lg transition hover:shadow-2xl">
+        <h3 class="text-2xl font-semibold text-black dark:text-white">AI Engineer – DigiDara Technologies Pvt Ltd</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">May 2025 – Present | Tiruchirapalli, India</p>
+        <ul class="list-disc pl-5 text-gray-600 dark:text-gray-300">
+          <li>Developed Agentic AI-powered educational assistant using LangChain & Streamlit.</li>
+          <li>Implemented semantic search pipelines using FAISS and Hugging Face Transformers.</li>
+          <li>Worked on end-to-end ML workflows, including model deployment with FastAPI.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <div class="mt-20">
+    <h2 class="text-2xl font-bold mb-6 text-center">💡 Skills</h2>
+    <div class="flex flex-wrap justify-center gap-3 text-sm">
+      <span class="bg-blue-600 text-white px-3 py-1 rounded-full">Python</span>
+      <span class="bg-yellow-500 text-black px-3 py-1 rounded-full">Machine Learning</span>
+      <span class="bg-purple-700 text-white px-3 py-1 rounded-full">NLP</span>
+      <span class="bg-red-600 text-white px-3 py-1 rounded-full">SQL</span>
+      <span class="bg-sky-500 text-white px-3 py-1 rounded-full">Excel</span>
+      <span class="bg-amber-700 text-white px-3 py-1 rounded-full">Statistics</span>
+      <span class="bg-orange-400 text-black px-3 py-1 rounded-full">R Programming</span>
+      <span class="bg-teal-600 text-white px-3 py-1 rounded-full">LangChain</span>
+      <span class="bg-yellow-800 text-white px-3 py-1 rounded-full">Agentic AI</span>
+    </div>
+  </div>
+
+  <!-- Tools -->
+  <div class="mt-16">
+    <h2 class="text-2xl font-bold mb-6 text-center">🛠️ Tools & Platforms</h2>
+    <div class="flex flex-wrap justify-center gap-3 text-sm">
+      <span class="bg-green-500 text-white px-3 py-1 rounded-full">Power BI</span>
+      <span class="bg-indigo-600 text-white px-3 py-1 rounded-full">Streamlit</span>
+      <span class="bg-orange-600 text-white px-3 py-1 rounded-full">FastAPI</span>
+      <span class="bg-pink-500 text-white px-3 py-1 rounded-full">Hugging Face</span>
+      <span class="bg-orange-400 text-black px-3 py-1 rounded-full">GitHub</span>
+      <span class="bg-blue-700 text-white px-3 py-1 rounded-full">VS Code</span>
+      <span class="bg-gray-700 text-white px-3 py-1 rounded-full">Google Colab</span>
+      <span class="bg-teal-600 text-white px-3 py-1 rounded-full">MySQL</span>
+    </div>
+  </div>
+</section>
+
+  <!-- Social Icons -->
+  <div class="mt-24 flex justify-center space-x-6 text-2xl">
+    <a href="https://github.com/Vishwanathamrish" target="_blank" class="text-gray-800 hover:text-black dark:text-white">
+      <i data-lucide="github" class="w-6 h-6"></i>
+    </a>
+    <a href="https://linkedin.com/in/vishwanath-r-4a940721b" target="_blank" class="text-blue-600 hover:text-blue-800">
+      <i data-lucide="linkedin" class="w-6 h-6"></i>
+    </a>
+    <a href="mailto:vishwanathamrish@gmail.com" class="text-red-500 hover:text-red-700">
+      <i data-lucide="mail" class="w-6 h-6"></i>
+    </a>
+    <a href="https://x.com/Vishwa84829045" target="_blank" class="text-black hover:text-gray-800 dark:text-white">
+      <i data-lucide="twitter" class="w-6 h-6"></i>
+    </a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="mt-16 text-center text-gray-400 text-sm">
+    <p>© 2025 Vishwanath Rajendran</p>
+  </footer>
+  <!-- Spacer after footer -->
+  <div class="h-16"></div>
+
+  <!-- Theme Toggle Script -->
+  <script>
+    const toggle = document.getElementById('theme-toggle');
+    toggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      const isDark = document.documentElement.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      toggle.textContent = isDark ? '☀️' : '🌙';
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const isDark = document.documentElement.classList.contains('dark');
+      toggle.textContent = isDark ? '☀️' : '🌙';
+      lucide.createIcons();
+    });
+  </script>
+
+</body>
+</html>

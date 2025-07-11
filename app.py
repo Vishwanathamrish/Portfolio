@@ -9,7 +9,7 @@ app = Flask(__name__)
 SMTP_SERVER = 'smtp.gmail.com'
 SMTP_PORT = 587
 SENDER_EMAIL = 'vishwanathamrish@gmail.com'
-SENDER_PASSWORD = 'qplt yhqf kpya kbti'  # Consider moving this to environment variable for security
+SENDER_PASSWORD = ''  # Consider moving this to environment variable for security
 
 # Routes
 @app.route('/')
